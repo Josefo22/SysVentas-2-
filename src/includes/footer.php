@@ -48,6 +48,9 @@
 <script src="../assets/js/jquery-ui/jquery-ui.min.js"></script>
 <script src="../assets/js/Chart.bundle.min.js"></script>
 <script src="../assets/js/funciones.js"></script>
+
+
+
 </body>
 
 </html>

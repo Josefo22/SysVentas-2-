@@ -8,39 +8,54 @@ $pdf->SetMargins(10, 10, 10);
 $pdf->SetTitle("Ventas");
 $pdf->SetFont('Arial', 'B', 12);
 
-$id = $_GET['v'];
-$idcliente = $_GET['cl'];
+$id = isset($_GET['v']) ? intval($_GET['v']) : 0;
+$idcliente = isset($_GET['cl']) ? intval($_GET['cl']) : 0;
 
-$config = mysqli_query($conexion, "SELECT * FROM configuracion");
-$datos = mysqli_fetch_assoc($config);
+if ($id <= 0 || $idcliente <= 0) {
+    die("Error: Parámetros de venta o cliente no válidos.");
+}
 
+// Validar existencia de la venta
+$venta = mysqli_query($conexion, "SELECT * FROM ventas WHERE id = $id AND id_cliente = $idcliente");
+
+if (!$venta || mysqli_num_rows($venta) == 0) {
+    die("Error: No se encontró la venta con el ID especificado.");
+}
+
+// Validar existencia del cliente
 $clientes = mysqli_query($conexion, "SELECT * FROM cliente WHERE idcliente = $idcliente");
+
+if (!$clientes || mysqli_num_rows($clientes) == 0) {
+    die("Error: Cliente no encontrado. ID Cliente: $idcliente");
+}
+
 $datosC = mysqli_fetch_assoc($clientes);
 
+// Obtener los detalles de la venta
 $ventas = mysqli_query($conexion, "SELECT d.*, p.codproducto, p.descripcion FROM detalle_venta d INNER JOIN producto p ON d.id_producto = p.codproducto WHERE d.id_venta = $id");
 
-$pdf->Cell(195, 5, utf8_decode($datos['nombre']), 0, 1, 'C');
+$pdf->Cell(195, 5, utf8_decode("DROGUERIA MI BUENA ESPERANZA"), 0, 1, 'C'); // Si tienes el nombre de la empresa en la configuración, cámbialo aquí
 $pdf->Image("../../assets/img/logo.jpeg", 170, 15, 30, 20, 'jpeg');
 
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell(20, 5, utf8_decode("Teléfono: "), 0, 0, 'L');
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(20, 5, $datos['telefono'], 0, 1, 'L');
+$pdf->Cell(20, 5, "3113433423", 0, 1, 'L'); // Usa el teléfono de la empresa o de la configuración
 
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell(20, 5, utf8_decode("Dirección: "), 0, 0, 'L');
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(20, 5, utf8_decode($datos['direccion']), 0, 1, 'L');
+$pdf->Cell(20, 5, utf8_decode("Ciudad Bolivar (Antioquia)"), 0, 1, 'L'); // Usa la dirección de la empresa
 
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell(20, 5, "Correo: ", 0, 0, 'L');
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(20, 5, utf8_decode($datos['email']), 0, 1, 'L');
+$pdf->Cell(20, 5, utf8_decode("hilda-aguirre34j@hotmail.com"), 0, 1, 'L'); // Usa el correo de la empresa
 
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell(20, 5, "Nit: ", 0, 0, 'L');
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(195, 5, "1059697752-7", 0, 1, 'L');
+$pdf->Cell(195, 5, "35603096-2", 0, 1, 'L');
 $pdf->Ln();
 
 $pdf->SetFont('Arial', 'B', 12);

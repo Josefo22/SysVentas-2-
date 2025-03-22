@@ -34,14 +34,15 @@ if (!empty($_POST)) {
             <th>#</th>
             <th>Cliente</th>
             <th>Pre_separado</th>
-            <th>abonado</th>
+            <th>Abonado</th>
             <th>PDF</th>
+            <th>Acciones</th> <!-- Nueva columna para acciones -->
         </tr>
     </thead>
     <tbody>
 <?php
 // Obtener los datos de la tabla correspondiente y mostrarlos en la tabla
-$query = mysqli_query($conexion, "SELECT * FROM separados"); // Reemplaza "tu_tabla" con el nombre de tu tabla
+$query = mysqli_query($conexion, "SELECT * FROM separados"); 
 while ($row = mysqli_fetch_assoc($query)) {
 ?>
             <tr>
@@ -52,12 +53,18 @@ while ($row = mysqli_fetch_assoc($query)) {
                 <td>
                     <a href="pdf/separado.php?cl=<?php echo isset($row['nombre_cl']) ? $row['nombre_cl'] : ''; ?>&v=<?php echo isset($row['id']) ? $row['id'] : ''; ?>" target="_blank" class="btn btn-danger"><i class="fas fa-file-pdf"></i></a>
                 </td>
+                <td>
+                    <form action="eliminar_provedor.php?id=<?php echo $row['id']; ?>" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-danger"><i class='fas fa-trash-alt'></i> Eliminar</button>
+                    </form>
+                </td>
             </tr>
 <?php
 }
 ?>
     </tbody>
 </table>
+
 
 
 <?php include_once "includes/footer.php"; ?>

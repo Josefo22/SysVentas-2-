@@ -20,7 +20,7 @@ if(isset($_GET['v']) && isset($_GET['cl'])) {
         // Restar el abono al precio_separado para obtener el valor restante
         $precio_restante = $separado['precio_separado'] - $separado['abono'];
 
-        $pdf->Cell(195, 5, utf8_decode("SysVentas"), 0, 1, 'C');
+        $pdf->Cell(195, 5, utf8_decode("DROGUERIA MI BUENA ESPERANZA"), 0, 1, 'C');
         $pdf->Image("../../assets/img/logo.jpeg", 170, 15, 30, 20, 'jpeg');
 
         // Resto del código para generar el PDF usando los datos de $separado
@@ -28,22 +28,22 @@ if(isset($_GET['v']) && isset($_GET['cl'])) {
         $pdf->SetFont('Arial', 'B', 10);
         $pdf->Cell(20, 5, utf8_decode("Teléfono: "), 0, 0, 'L');
         $pdf->SetFont('Arial', '', 10);
-        $pdf->Cell(20, 5, utf8_decode("3022891396"), 0, 1, 'L');
+        $pdf->Cell(20, 5, utf8_decode("3113433423"), 0, 1, 'L');
 
         $pdf->SetFont('Arial', 'B', 10);
         $pdf->Cell(20, 5, utf8_decode("Dirección: "), 0, 0, 'L');
         $pdf->SetFont('Arial', '', 10);
-        $pdf->Cell(20, 5, utf8_decode("Envigado"), 0, 1, 'L');
+        $pdf->Cell(20, 5, utf8_decode("Ciudad Bolivar (Antioquia)"), 0, 1, 'L');
 
         $pdf->SetFont('Arial', 'B', 10);
         $pdf->Cell(20, 5, "Correo: ", 0, 0, 'L');
         $pdf->SetFont('Arial', '', 10);
-        $pdf->Cell(20, 5, utf8_decode("ytrewtrew11@gmail.com"), 0, 1, 'L');
+        $pdf->Cell(20, 5, utf8_decode("hilda-aguirre34j@hotmail.com"), 0, 1, 'L');
 
         $pdf->SetFont('Arial', 'B', 10);
         $pdf->Cell(20, 5, "Nit: ", 0, 0, 'L');
         $pdf->SetFont('Arial', '', 10);
-        $pdf->Cell(195, 5, "1059697752-7", 0, 1, 'L');
+        $pdf->Cell(195, 5, "35603096-2", 0, 1, 'L');
 
         $pdf->Ln();
 

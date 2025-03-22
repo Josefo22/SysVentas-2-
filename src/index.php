@@ -15,27 +15,34 @@ $interface_colors = array(
     "Configuracion" => "bg-success"
 );
 ?>
+ 
+     <div class="loader-container d-none">
+        <div class="load_animation">
+            <ion-icon name="bag-handle-outline" class="animation"></ion-icon>
+        </div>
+    </div>
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray">Panel de Administración</h1>
     </div>
 
     <!-- Content Row -->
     <div class="row">
-        <a class="col-xl-3 col-md-6 mb-4" href="usuarios.php">
-            <div class="card border-left-primary shadow h-100 py-2 bg-warning">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Usuarios</div>
-                            <div class="h5 mb-0 font-weight-bold text-white"><?php echo $totalU; ?></div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-user fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
+    <a class="col-xl-3 col-md-6 mb-4 fade-link" href="usuarios.php">
+    <div class="card border-left-primary shadow h-100 py-2 bg-warning">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Usuarios</div>
+                    <div class="h5 mb-0 font-weight-bold text-white"><?php echo $totalU; ?></div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-user fa-2x text-gray-300"></i>
                 </div>
             </div>
-        </a>
+        </div>
+    </div>
+</a>
+
 
         <!-- Earnings (Monthly) Card Example -->
         <a class="col-xl-3 col-md-6 mb-4" href="clientes.php">
@@ -173,5 +180,5 @@ $interface_colors = array(
             </div>
         </div>
     </div>
-
+  
 <?php include_once "includes/footer.php"; ?>

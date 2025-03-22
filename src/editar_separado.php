@@ -64,36 +64,37 @@ if (empty($_GET['id'])) {
                 Modificar separado
             </div>
             <div class="card-body">
-                <form action="" method="post">
-                    <?php echo isset($alert) ? $alert : ''; ?>
-                    <div class="form-group">
-                        <label for="nombre_cl">Nombre</label>
-                        <input type="text" name="nombre_cl" id="nombre_cl" class="form-control" placeholder="Ingrese nombre del cliente" value="<?php echo isset($nombre_cl) ? $nombre_cl : ''; ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="direccion_cliente">Dirección</label>
-                        <input type="text" name="direccion_cliente" id="direccion_cliente" class="form-control" placeholder="Ingrese dirección" value="<?php echo isset($dire_cliente) ? $dire_cliente : ''; ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono_cliente">Teléfono</label>
-                        <input type="text" name="telefono_cliente" id="telefono_cliente" class="form-control" placeholder="Ingrese teléfono" value="<?php echo isset($tele_cliente) ? $tele_cliente : ''; ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="cedula_cliente">Cédula</label>
-                        <input type="text" name="cedula_cliente" id="cedula_cliente" class="form-control" placeholder="Ingrese cédula" value="<?php echo isset($ced_cliente) ? $ced_cliente : ''; ?>" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="nom_separado">Nombre del Separado</label>
-                        <input type="text" name="nom_separado" id="nom_separado" class="form-control" placeholder="Ingrese nombre del separado" value="<?php echo isset($nom_separado) ? $nom_separado : ''; ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="precio_separado">Precio del Separado</label>
-                        <input type="text" name="precio_separado" id="precio_separado" class="form-control" placeholder="Ingrese precio del separado" value="<?php echo isset($pre_separado) ? $pre_separado : ''; ?>">
-                    </div>
-                    <input type="hidden" name="action" value="separar">
-                    <input type="submit" value="Actualizar Separado" class="btn btn-primary">
-                    <a href="abonos.php" class="btn btn-danger">Atrás</a>
-                </form>
+            <form action="" method="post">
+    <?php echo isset($alert) ? $alert : ''; ?>
+    <div class="form-group">
+        <label for="nombre_cl">Nombre</label>
+        <input type="text" name="nombre_cl" id="nombre_cl" class="form-control" placeholder="Ingrese nombre del cliente" value="<?php echo isset($nombre_cl) ? $nombre_cl : ''; ?>">
+    </div>
+    <div class="form-group">
+        <label for="direccion_cliente">Dirección</label>
+        <input type="text" name="direccion_cliente" id="direccion_cliente" class="form-control" placeholder="Ingrese dirección" value="<?php echo isset($dire_cliente) ? $dire_cliente : ''; ?>">
+    </div>
+    <div class="form-group">
+        <label for="telefono_cliente">Teléfono</label>
+        <input type="text" name="telefono_cliente" id="telefono_cliente" class="form-control" placeholder="Ingrese teléfono" value="<?php echo isset($tele_cliente) ? $tele_cliente : ''; ?>">
+    </div>
+    <div class="form-group">
+        <label for="cedula_cliente">Cédula</label>
+        <input type="text" name="cedula_cliente" id="cedula_cliente" class="form-control" placeholder="Ingrese cédula" value="<?php echo isset($ced_cliente) ? $ced_cliente : ''; ?>" readonly>
+    </div>
+    <div class="form-group">
+        <label for="nom_separado">Nombre del Separado</label>
+        <input type="text" name="nom_separado" id="nom_separado" class="form-control" placeholder="Ingrese nombre del separado" value="<?php echo isset($nom_separado) ? $nom_separado : ''; ?>">
+    </div>
+    <div class="form-group">
+        <label for="precio_separado">Precio de la compra</label>
+        <input type="text" name="precio_separado" id="precio_separado" class="form-control" value="<?php echo isset($pre_separado) ? $pre_separado : ''; ?>" readonly>
+    </div>
+    <input type="hidden" name="action" value="separar">
+    <input type="submit" value="Actualizar Separado" class="btn btn-primary">
+    <a href="abonos.php" class="btn btn-danger">Atrás</a>
+</form>
+
             </div>
         </div>
     </div>

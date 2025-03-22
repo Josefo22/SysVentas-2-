@@ -1,7 +1,7 @@
 <?php
     $host = "localhost";
-    $user = "admin";
-    $clave = "admin";
+    $user = "root";
+    $clave = "";
     $bd = "sis_venta";
     $conexion = mysqli_connect($host,$user,$clave,$bd);
     if (mysqli_connect_errno()){

@@ -17,6 +17,7 @@ if (empty($_SESSION['active'])) {
     <link href="../assets/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <link rel="stylesheet" href="../assets/js/jquery-ui/jquery-ui.min.css">
     <script src="../assets/js/all.min.js" crossorigin="anonymous"></script>
+  
 </head>
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -82,3 +83,4 @@ if (empty($_SESSION['active'])) {
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid mt-2">
+             

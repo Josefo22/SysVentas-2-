@@ -75,6 +75,7 @@ if (!empty($_SESSION['active'])) {
                                         <?php echo isset($alert) ? $alert : ''; ?>
                                         <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                             <button class="btn btn-primary" type="submit">Login</button>
+                                            <a href="recuperar_usuario.php" class="small">¿Olvidaste tu usuario o contraseña?</a>
                                         </div>
                                     </form>
                                 </div>

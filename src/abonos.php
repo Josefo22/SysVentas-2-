@@ -103,8 +103,8 @@ $query_separados = mysqli_query($conexion, "SELECT * FROM separados");
             <th>Dirección</th>
             <th>Cédula</th>
             <th>Teléfono</th>
-            <th>Nom de Separado</th>
-            <th>Pre de Separado</th>
+            <th>Nom de proovedor</th>
+            <th>Pre de proovedor</th>
             <th>Saldo Pendiente</th> <!-- Nueva columna -->
             <th>Acciones</th>
         </tr>
@@ -149,7 +149,7 @@ $query_separados = mysqli_query($conexion, "SELECT * FROM separados");
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="my-modal-title">Nuevo Separado</h5>
+                <h5 class="modal-title" id="my-modal-title">Nueva Compra</h5>
                 <button class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

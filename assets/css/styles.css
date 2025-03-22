@@ -29,6 +29,31 @@
   --font-family-sans-serif: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
 }
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
 
 *,
 *::before,
@@ -56,6 +81,27 @@ body {
   color: #212921;
   text-align: left;
   background-color: #fff;
+}
+/* Para navegadores WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #ffffff; /* Color de fondo */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000000; /* Color de la scrollbar */
+  border-radius: 10px;
+  border: 2px solid #ffffff; /* Borde de la scrollbar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #444444; /* Color cuando se pasa el mouse */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff; /* Color del fondo de la pista */
+  border-radius: 10px;
+  border: 1px solid #000000; /* Borde de la pista */
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {

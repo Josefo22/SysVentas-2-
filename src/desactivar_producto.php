@@ -3,7 +3,7 @@ session_start();
 require("../conexion.php");
 
 $id_user = $_SESSION['idUser'];
-$permiso = "usuarios";
+$permiso = "productos";
 $sql = mysqli_query($conexion, "SELECT p.*, d.* FROM permisos p INNER JOIN detalle_permisos d ON p.id = d.id_permiso WHERE d.id_usuario = $id_user AND p.nombre = '$permiso'");
 $existe = mysqli_fetch_all($sql);
 if (empty($existe) && $id_user != 1) {
@@ -12,13 +12,10 @@ if (empty($existe) && $id_user != 1) {
 
 if (!empty($_GET['id'])) {
     $id = $_GET['id'];
+    
+    // Cambiar el estado del producto a inactivo
+    $query_desactivar = mysqli_query($conexion, "UPDATE producto SET estado = 0 WHERE codproducto = $id");
 
-    // Cambia esta línea para eliminar el producto completamente
-    $query_delete = mysqli_query($conexion, "DELETE FROM producto WHERE codproducto = $id");
-
-    // Cerrar la conexión
     mysqli_close($conexion);
-
-    // Redirigir de vuelta a la página de productos
     header("Location: productos.php");
 }

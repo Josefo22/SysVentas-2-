@@ -78,16 +78,21 @@ if (empty($existe) && $id_user != 1) {
                          <td><?php echo $data['existencia']; ?></td>
                          <td><?php echo $estado ?></td>
                          <td>
-                             <?php if ($data['estado'] == 1) { ?>
-                                 <a href="agregar_producto.php?id=<?php echo $data['codproducto']; ?>" class="btn btn-primary"><i class='fas fa-audio-description'></i></a>
-
-                                 <a href="editar_producto.php?id=<?php echo $data['codproducto']; ?>" class="btn btn-success"><i class='fas fa-edit'></i></a>
-
-                                 <form action="eliminar_producto.php?id=<?php echo $data['codproducto']; ?>" method="post" class="confirmar d-inline">
-                                     <button class="btn btn-danger" type="submit"><i class='fas fa-trash-alt'></i> </button>
-                                 </form>
-                             <?php } ?>
-                         </td>
+                         <?php if ($data['estado'] == 1) { ?>
+                             <a href="agregar_producto.php?id=<?php echo $data['codproducto']; ?>" class="btn btn-primary"><i class='fas fa-audio-description'></i></a>
+                             <a href="editar_producto.php?id=<?php echo $data['codproducto']; ?>" class="btn btn-success"><i class='fas fa-edit'></i></a>
+                             <form action="eliminar_producto.php?id=<?php echo $data['codproducto']; ?>" method="post" class="confirmar d-inline">
+                                 <button class="btn btn-danger" type="submit"><i class='fas fa-trash-alt'></i></button>
+                             </form>
+                             <form action="desactivar_producto.php?id=<?php echo $data['codproducto']; ?>" method="post" class="d-inline">
+                                 <button class="btn btn-warning" type="submit"><i class='fas fa-ban'></i> Desactivar</button>
+                             </form>
+                         <?php } else { ?>
+                             <form action="activar_producto.php?id=<?php echo $data['codproducto']; ?>" method="post" class="d-inline">
+                                 <button class="btn btn-success" type="submit"><i class='fas fa-check'></i> Activar</button>
+                             </form>
+                         <?php } ?>
+                     </td>
                      </tr>
              <?php }
                 } ?>

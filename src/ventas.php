@@ -8,6 +8,11 @@ if (empty($existe) && $id_user != 1) {
     header("Location: permisos.php");
 }
 ?>
+  <div class="loader-container d-none">
+        <div class="load_animation">
+            <ion-icon name="bag-handle-outline" class="animation"></ion-icon>
+        </div>
+    </div>
 <div class="row">
     <div class="col-lg-12">
         <div class="form-group">
